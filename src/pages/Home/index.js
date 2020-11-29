@@ -25,7 +25,7 @@ const tabItems = [
     path: '/home/news'
   },
   {
-    title: 'w我的',
+    title: '我的',
     icon: 'icon-my',
     path: '/home/profile'
   }
@@ -34,6 +34,15 @@ class Home extends React.Component {
   state = {
     selectedTab: this.props.location.pathname,
     // tabBar的显示与隐藏
+  }
+  componentDidUpdate(prevProps) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      this.setState(() => {
+        return {
+          selectedTab: this.props.location.pathname
+        }
+      })
+    }
   }
   renderTabBarItems() {
     return tabItems.map(item => (

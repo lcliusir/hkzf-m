@@ -1,0 +1,54 @@
+.citylist{
+  height: 100%;
+  padding-top: 45px;
+  color: #000;
+  .am-navbar-title{
+    color: #333;
+  }
+  // .ReactVirtualized__List{
+  //   padding-bottom: 15px;
+  // }
+  .am-navbar-light {
+    background-color: #f6f5f6;
+    color: #333;
+    margin-top: -45px;
+  }
+  .title {
+    height: 36px;
+    color: #666;
+    font-size: 15px;
+    padding: 15px 20px;
+  }
+  .name {
+    height: 50px;
+    font-size: 18px;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .city-index {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 5px;
+    z-index: 1;
+    height: 90%;
+    box-sizing: border-box;
+    padding-top: 20px;
+    text-align: center;
+    list-style: none;
+    .city-index-item {
+      flex: 1;
+    }
+    .index-active {
+      color: #fff;
+      background-color: #21b97a;
+      border-radius: 100%;
+      display: inline-block;
+      font-size: 12px;
+      width: 15px;
+      height: 15px;
+      line-height: 15px;
+    }
+  }
+}
