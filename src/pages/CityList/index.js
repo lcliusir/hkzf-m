@@ -1,9 +1,10 @@
 import React from 'react'
-import { NavBar, Toast } from 'antd-mobile'
-import './index.scss'
+import { Toast } from 'antd-mobile'
 import axios from 'axios'
 import { getCurrentCity } from '../../utils'
 import { List, AutoSizer } from 'react-virtualized'
+import NavHeader from '../../components/NavHeader'
+import './index.scss'
 
 // List data as an array of strings
 // const list = Array(50).fill('11')
@@ -147,13 +148,9 @@ class CityList extends React.Component {
   render() {
     return (
       <div className="citylist">
-        <NavBar
-          mode="light"
-          icon={<i className="iconfont icon-back"></i>}
-          onLeftClick={() => this.props.history.go(-1)}
-        >
+        <NavHeader>
           城市选择
-        </NavBar>
+        </NavHeader>
 
         {/* 自动尺寸组件 */}
         <AutoSizer>

@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import 'antd-mobile/dist/antd-mobile.css'
 import './index.css'
-import App from './App'
 import './assets/fonts/iconfont.css'
 import 'react-virtualized/styles.css'
 // ReactDOM.render(
@@ -11,5 +10,6 @@ import 'react-virtualized/styles.css'
 //   </React.StrictMode>,
 //   document.getElementById('root')
 // )
+import App from './App'
 
 ReactDOM.render(<App />, document.getElementById('root'))
