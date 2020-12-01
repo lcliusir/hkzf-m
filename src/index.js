@@ -11,5 +11,4 @@ import 'react-virtualized/styles.css'
 //   document.getElementById('root')
 // )
 import App from './App'
-
 ReactDOM.render(<App />, document.getElementById('root'))

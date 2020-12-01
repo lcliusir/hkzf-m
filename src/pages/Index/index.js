@@ -9,6 +9,7 @@ import nav3 from '../../assets/images/nav-3.png'
 import nav4 from '../../assets/images/nav-4.png'
 // 样式
 import './index.scss'
+import { BASE_URL } from '../../utils/url'
 // 导航数据
 const navs = [
   {
@@ -122,7 +123,7 @@ export default class Index extends React.Component {
         style={{ display: 'inline-block', width: '100%', height: 212 }}
       >
         <img
-          src={`http://localhost:8080${item.imgSrc}`}
+          src={BASE_URL + item.imgSrc}
           alt=""
           style={{ width: '100%', verticalAlign: 'top' }}
         />
@@ -145,7 +146,7 @@ export default class Index extends React.Component {
           <p className="title">{item.title}</p>
           <span className="info">{item.desc}</span>
         </div>
-        <img src={`http://localhost:8080${item.imgSrc}`} alt="" />
+        <img src={BASE_URL + item.imgSrc} alt="" />
       </Flex>
     )
   }
@@ -157,7 +158,7 @@ export default class Index extends React.Component {
           <div className="imgwrap">
             <img
               className="img"
-              src={`http://localhost:8080${item.imgSrc}`}
+              src={BASE_URL + item.imgSrc}
               alt=""
             />
           </div>
