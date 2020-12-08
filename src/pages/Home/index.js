@@ -1,11 +1,11 @@
 import React from 'react'
+import './index.css'
 import News from '../News'
 import Index from '../Index'
 import List from '../List'
 import Profile from '../Profile'
 import { Route } from 'react-router-dom'
 import { TabBar } from 'antd-mobile'
-import './index.css'
 
 // TabBar 数据
 const tabItems = [

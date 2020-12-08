@@ -1,0 +1,51 @@
+/* 覆盖原有样式 */
+
+/* 顶部搜索大盒子 */
+
+.header {
+  background-color: #f6f5f6;
+  height: 45px;
+  padding: 0 10px;
+}
+
+/* 顶部搜索主体 */
+
+.searchHeader {
+  position: relative;
+  top: 0;
+  padding: 0;
+}
+
+/* 顶部左侧返回按钮 */
+
+.header :global(.icon-back) {
+  font-size: 16px;
+  color: #999;
+}
+
+/* 地图找房图标 */
+
+.searchHeader :global(.icon-map) {
+  color: #00ae66;
+}
+
+.searchHeader :global(.search) {
+  height: 30px;
+}
+
+/* 房屋列表样式 */
+
+.houseItems {
+  padding: 0 15px;
+}
+
+.houseItems :global(.ReactVirtualized__List) {
+  padding-bottom: 50px;
+}
+
+.loading {
+  line-height: 120px;
+  text-align: center;
+  height: 110px;
+  background-color: #f6f5f6;
+}

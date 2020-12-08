@@ -1,26 +1,10 @@
 import React from 'react'
 import { Toast } from 'antd-mobile'
 import axios from 'axios'
-import { getCurrentCity } from '../../utils'
+import { getCurrentCity } from '../../utils/index'
 import { List, AutoSizer } from 'react-virtualized'
 import NavHeader from '../../components/NavHeader'
 import './index.scss'
-
-// List data as an array of strings
-// const list = Array(50).fill('11')
-// function rowRenderer({
-//   key,
-//   index,  // 索引号
-//   isScrolling, // 是否正在滚动 
-//   isVisible, // 是否可见
-//   style, // 必须 指定每一行数据的位置
-// }) {
-//   return (
-//     <div key={key} style={style}>
-//       {list[index]}
-//     </div>
-//   )
-// }
 
 // 转换城市索引
 const formatCityIndex = letter => {
@@ -91,6 +75,7 @@ class CityList extends React.Component {
       cityIndex
     }
   }
+  // 渲染行
   rowRenderer = ({
     key,
     index,  // 索引号
