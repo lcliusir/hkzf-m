@@ -11,7 +11,7 @@ html, body {
   touch-action: pan-y;
 }
 
-h1, h2, p, ul {
+h1, h2, p, ul, dd {
   margin: 0;
 }
 
@@ -21,4 +21,10 @@ html, body, #root, .App {
 
 li {
   list-style: none;
+}
+
+/* 解决找房筛选条件对话框展示，还能滚动页面 */
+
+.body-fixed {
+  overflow: hidden;
 }

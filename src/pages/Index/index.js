@@ -1,7 +1,7 @@
 import React from 'react'
 import { Carousel, Flex, Grid, WingBlank } from 'antd-mobile'
 import axios from 'axios'
-import { getCurrentCity } from '../../utils'
+import { getCurrentCity } from '../../utils/index'
 // nav 图片
 import nav1 from '../../assets/images/nav-1.png'
 import nav2 from '../../assets/images/nav-2.png'
@@ -10,6 +10,7 @@ import nav4 from '../../assets/images/nav-4.png'
 // 样式
 import './index.scss'
 import { BASE_URL } from '../../utils/url'
+import SearchHeader from '../../components/SearchHeader'
 // 导航数据
 const navs = [
   {
@@ -106,8 +107,11 @@ export default class Index extends React.Component {
     //     curCityName: res.data.body.label
     //   })
     // })
+    this.updateCurCity()
+  }
 
-    // 优化
+  // 更新 当前 城市
+  updateCurCity = async () => {
     const curCity = await getCurrentCity()
     this.setState(() => {
       return {
@@ -115,6 +119,8 @@ export default class Index extends React.Component {
       }
     })
   }
+
+  // 渲染轮播图
   randerSwipers() {
     return this.state.swipers.map(item => (
       <a
@@ -130,6 +136,7 @@ export default class Index extends React.Component {
       </a>
     ))
   }
+  // 渲染导航
   renderNavs() {
     return navs.map(item => (
       <Flex.Item key={item.id} onClick={() => this.props.history.push(item.path)}>
@@ -189,24 +196,7 @@ export default class Index extends React.Component {
         </div>
 
         {/* 顶部导航 */}
-        <Flex className='search-box'>
-          {/* 左侧白色区域 */}
-          <Flex className="search">
-            {/* 位置 */}
-            <div className="location" onClick={() => this.props.history.push('/citylist')}>
-              <span className="name">{this.state.curCityName}</span>
-              <i className="iconfont icon-arrow" />
-            </div>
-
-            {/* 搜索表单 */}
-            <div className="form" onClick={() => this.props.history.push('/search')}>
-              <i className="iconfont icon-seach" />
-              <span className="text">请输入小区或地址</span>
-            </div>
-          </Flex>
-          {/* 右侧地图图标 */}
-          <i className="iconfont icon-map" onClick={() => this.props.history.push('/map')} />
-        </Flex>
+        <SearchHeader curCityName={this.state.curCityName} />
 
         {/* nav导航 */}
         <Flex className="nav">

@@ -4,15 +4,16 @@ import { NavBar } from 'antd-mobile'
 import styles from './index.module.css'
 import { withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
-function NavHeader({ children, history, onLeftClick }) {
+function NavHeader({ children, history, onLeftClick, className, rightContent }) {
   // 左侧按钮默认点击行为
   const defaultClick = () => history.go(-1)
   return (
     <NavBar
-      className={styles['am-navbar-light']}
+      className={[styles.navBar, className || ''].join(' ')}
       mode="light"
       icon={<i className="iconfont icon-back"></i>}
       onLeftClick={onLeftClick || defaultClick}
+      rightContent={rightContent}
     >
       {children}
     </NavBar>
@@ -20,6 +21,8 @@ function NavHeader({ children, history, onLeftClick }) {
 }
 NavHeader.propTypes = {
   children: PropTypes.string.isRequired,
-  onLeftClick: PropTypes.func
+  onLeftClick: PropTypes.func,
+  className: PropTypes.string,
+  rightContent: PropTypes.array
 }
 export default withRouter(NavHeader)
