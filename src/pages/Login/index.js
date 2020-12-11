@@ -125,8 +125,6 @@ Login = withFormik({
       } else {
         props.history.replace(props.location.state.from.pathname)
       }
-      // 处理 this 指向 handleSubmit 的第二个参数
-      // props.history.go(-1)
     } else {
       // 登录失败
       Toast.info(description, 2, null, false)

@@ -20,4 +20,9 @@ export const getCurrentCity = () => {
   }
   // 本地有城市数据 直接返回 Promise 形式的数据
   return Promise.resolve(localCity)
-} 
+}
+
+export { API } from './api'
+export { BASE_URL } from './url'
+export * from './auth'
+export * from './city'

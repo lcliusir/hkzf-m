@@ -29,13 +29,13 @@ const navs = [
     id: 3,
     img: nav3,
     title: '地图找房',
-    path: '/home/map'
+    path: '/map'
   },
   {
     id: 4,
     img: nav4,
     title: '去出租',
-    path: '/home/sale'
+    path: '/rent/add'
   }
 ]
 // const data = Array.from(new Array(4)).map((_val, i) => ({

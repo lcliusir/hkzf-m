@@ -15,7 +15,7 @@ const NoHouse = ({ children }) => (
 )
 
 NoHouse.propTypes = {
-  children: PropTypes.string.isRequired
+  children: PropTypes.node.isRequired
 }
 
 export default NoHouse

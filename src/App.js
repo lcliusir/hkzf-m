@@ -7,7 +7,11 @@ import HouseDetail from './pages/HouseDetail'
 import Login from './pages/Login'
 import Registe from './pages/Registe'
 import Profile from './pages/Profile'
-// import AuthRoute from './components/AuthRoute'
+import AuthRoute from './components/AuthRoute'
+
+import Rent from './pages/Rent'
+import RentAdd from './pages/Rent/Add'
+import RentSearch from './pages/Rent/Search'
 
 function App() {
   return (
@@ -30,6 +34,11 @@ function App() {
 
         {/* 注册 */}
         <Route path="/registe" component={Registe} />
+
+        {/* 发布房源 */}
+        <AuthRoute exact path="/rent" component={Rent} />
+        <AuthRoute path="/rent/add" component={RentAdd} />
+        <AuthRoute path="/rent/search" component={RentSearch} />
       </div>
     </Router>
   )
