@@ -7,7 +7,7 @@ import HouseDetail from './pages/HouseDetail'
 import Login from './pages/Login'
 import Registe from './pages/Registe'
 import Profile from './pages/Profile'
-import AuthRoute from './components/AuthRoute'
+// import AuthRoute from './components/AuthRoute'
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
 
         <Route path="/" exact render={() => <Redirect to="/home" />} />
         <Route path="/home" component={Home} />
-        <AuthRoute path="/map" component={Map} />
+        <Route path="/map" component={Map} />
 
         <Route path="/citylist" component={CityList} />
         <Route path="profile" component={Profile} />

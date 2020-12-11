@@ -5,6 +5,7 @@ import NavHeader from '../../components/NavHeader'
 import styles from './index.module.css'
 import { API } from '../../utils/api'
 import { withFormik, Field, Form, ErrorMessage } from 'formik'
+import { setToken } from '../../utils/auth'
 import * as Yup from 'yup'
 
 // 验证规则：
@@ -116,7 +117,8 @@ Login = withFormik({
     const { body, description, status } = res.data
     // 登录成功
     if (status === 200) {
-      localStorage.setItem('hkzf_token', body.token)
+      // localStorage.setItem(body.token)
+      setToken(body.token)
       if (!props.location.state) {
         // 正常登陆
         props.history.go(-1)
